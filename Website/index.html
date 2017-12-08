@@ -8,7 +8,23 @@
     <title>NewUser</title>
 </head>
 <body>
-    
+    <div id="newUserBox">
+            <h1>New User:</h1>
+            
+                <p>Name: </p>
+                <input type="text" id="Username">
+                <br>
+                <p>Security Code: </p>
+                <input type="text" id="SecurityCode">
+                <br>
+                <input id="submitButton" type="submit" onclick="newUser()" >
+          
+            </div>
+
+            <div id="responseBox">
+                <h2>Thank you!</h2>
+                <p id="responseFromServer"></p>
+            </div>
 </body>
 <script src="main.js"></script>
 </html>

@@ -26,5 +26,7 @@ input {
     padding: 2rem;
     background-color: lightblue;
     width: 20rem;
+    font-family: arial;
+    color: white;
 }
 

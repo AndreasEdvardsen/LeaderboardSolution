@@ -35,6 +35,9 @@ namespace LeaderboardWebApi
             }
 
             app.UseMvc();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+            
         }
     }
 }
