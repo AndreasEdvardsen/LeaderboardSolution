@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <title>NewUser</title>
 </head>
-<body>
+<body onload="ClearTable()">
 <div class="wrapper">
     <div id="NewUserContainer">
         <div id="newUserBox">
@@ -28,10 +28,23 @@
     </div>
 
     <div id="WelcomeBox">
-        <h1>Welcome!<br>This is how it works:
+        <h1>
+            Welcome!<br>This is how it works:
         </h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>This site is made for creating and mannaging an online leaderboard without needing to set up a new SQL database and without the need to know coding very well.</p>
+        <p>
+            All you need to know is...
+            <br>
+            <br/>
+            Step One: Create a new useraccount on the left side. There you will get an Unique id key that you use for adding highscores, and viewing them.
+            <br>
+            <br/>
+            Step Two: write down you user information, and proceed to enter the unique id on the bottom left. This will give you an overview over what links to use when adding/viewing highscores, and topp 10 highscores.
+            <br/>
+            <br/>
+            Step Three: Use the links in your project! These links are GET request url's that will respond with either a status message if upload was a sucsess, or all Highscores connected to your Unique key. (In the "Add Highscore" link there are two fields you need to add manualy, scoreholders name, and the score. How you do this is up to you.)
+        </p>
+
     </div>
 
     <div id="HighScores">
@@ -61,7 +74,8 @@
     </div>
 
     <div id="UserLogin">
-        <h2>Already have an<br>unique id?
+        <h2>
+            Already have an<br>unique id?
         </h2>
         <p>Unique Id:</p>
         <form action="javascript:void(0);" id="UserLoginForm">
@@ -73,9 +87,9 @@
     <div id="Links">
         <h1>Links:</h1>
         <p>Add Highscore:</p>
-        <input type="text" value="www.somesite.com"/>
+        <input type="text" id="AddHighscoreLink" value="http://aeleaderboards.azurewebsites.net/api/NewHighscore?UniqueId=YOURID&Name=NAME&Score=SCORE"/>
         <p>Show Highscores:</p>
-        <input type="text" value="www.somesite.com"/>
+        <input type="text" id="ShowHighscoreLink" value="http://aeleaderboards.azurewebsites.net/api/ViewHighscores?UniqueId=YOURID"/>
     </div>
 
 </div>

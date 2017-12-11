@@ -1,3 +1,17 @@
+function ClearTable() {
+    document.getElementById("HighScoresTable").innerHTML = "";
+
+    var table = document.getElementById("HighScoresTable");
+    var row = table.insertRow(-1);
+    var cellName = row.insertCell(0);
+    var cellScore = row.insertCell(1);
+    var cellTimestamp = row.insertCell(2);
+
+    cellName.outerHTML = "<th>Name:</th>";
+    cellScore.outerHTML = "<th>Score:</th>";
+    cellTimestamp.outerHTML = "<th>TimeStamp:</th>";
+}
+
 document.getElementById("NewUserForm").onsubmit = function newUser() {
     var xhttp = new XMLHttpRequest();
     var Username = document.getElementById('Username').value;
@@ -28,18 +42,23 @@ document.getElementById("UserLoginForm").onsubmit = function() {
             var ressults = JSON.parse(this.responseText);
             var highscore = ressults.highscores;
 
-            for (var ressult in highscore) {
-                var row = table.insertRow(1);
+            ClearTable();
+            for (var i = 0; i < highscore.length; i++) {
+                var row = table.insertRow(-1);
                 var cellName = row.insertCell(0);
                 var cellScore = row.insertCell(1);
                 var cellTimestamp = row.insertCell(2);
-                cellName.innerHTML = ressult.name;
-                cellScore.innerHTML = ressult.score;
-                cellTimestamp.innerHTML = ressult.timeStamp;
-            }
 
+                cellName.innerHTML = highscore[i].name;
+                cellScore.innerHTML = highscore[i].score;
+                cellTimestamp.innerHTML = highscore[i].timeStamp;
+            }
+            var baseUrl = "http://aeleaderboards.azurewebsites.net/api/";
+            document.getElementById("AddHighscoreLink").value =
+                baseUrl + "NewHighscore?UniqueId=" + uniqueId + "&Name=SCOREHOLDERSNAME&Score=SCORETOADD";
+            document.getElementById("ShowHighscoreLink").value = baseUrl + "ViewHighscores?UniqueId=" + uniqueId;
         }
     };
-    xhttp.open("GET","api/ViewHighscores?id=" + uniqueId, true);
+    xhttp.open("GET", "api/ViewHighscores?id=" + uniqueId, true);
     xhttp.send();
 }
