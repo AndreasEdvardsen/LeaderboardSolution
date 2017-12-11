@@ -1,32 +1,110 @@
-p {
-    margin: 0.2rem;
-}
-input {
-    margin: 0.2rem;
-    border: none;
-}
-#submitButton{
-    background-color: white;
-    padding: 0.5rem;
-    transition: ease-in-out 0.5s ;
-    transform-origin: top left;
-}
-#submitButton:hover{
-    transform: scale(1.05);
-}
-#newUserBox{
+body {
     font-family: arial;
+    color: white;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+}
+
+.wrapper > div { height: auto; }
+
+#NewUserContainer {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#WelcomeBox {
+    grid-column: 2/4;
+    grid-row: 1;
+    background-color: lightblue;
+    padding: 2rem;
+}
+
+#HighScores {
+    grid-column: 4/5;
+    grid-row: 1/3;
+    background-color: lightblue;
+    padding: 2rem;
+}
+
+#UserLogin {
+    grid-column: 1;
+    grid-row: 2;
     background-color: lightcoral;
     padding: 2rem;
-    display: inline-block;
+}
+
+#Links {
+    grid-column: 2/4;
+    grid-row: 2;
+    background-color: lightcoral;
+    padding: 2rem;
+}
+
+#newUserBox {
+    font-family: arial;
+    background-color: lightcoral;
     color: white;
+    padding: 2rem;
 }
 
 #responseBox {
+    transition: ease-in-out 0.5s;
+    transform-origin: top;
+    font-size: 1.5rem;
     padding: 2rem;
     background-color: lightblue;
-    width: 20rem;
-    font-family: arial;
-    color: white;
+    height: 5rem;
 }
 
+h1 {
+    color: white;
+    display: inline;
+}
+
+p {
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+    font-size: 1.1rem;
+}
+
+input {
+    margin-top: 0.2rem;
+    width: 100%;
+    border: none;
+    height: 1.5rem;
+    padding-left: 0.2rem;
+    font-weight: bold;
+    color: lightcoral;
+    font-size: 1.2rem;
+}
+
+.subBtn {
+    width: 50%;
+    background-color: white;
+    margin-top: 1rem;
+    padding: 0.4rem;
+    transition: ease-in-out 0.5s;
+    transform-origin: top left;
+    height: 2rem;
+}
+
+.subBtn:hover { transform: scale(1.05); }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th { border-bottom: 3px white solid; }
+
+td, th {
+    text-align: left;
+    padding-top: 1rem;
+}

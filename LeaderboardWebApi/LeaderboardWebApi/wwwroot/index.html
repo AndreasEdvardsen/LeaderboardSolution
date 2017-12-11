@@ -8,22 +8,76 @@
     <title>NewUser</title>
 </head>
 <body>
-<div id="newUserBox">
-    <h1>New User:</h1>
+<div class="wrapper">
+    <div id="NewUserContainer">
+        <div id="newUserBox">
+            <h1>New User:</h1>
+            <form action="javascript:void(0);" id="NewUserForm">
+                <p>Name: </p>
+                <input type="text" id="Username" required>
+                <br>
+                <p>Security Code: </p>
+                <input type="text" id="SecurityCode" required>
+                <br>
+                <input class="subBtn" type="submit" name="submit">
+            </form>
+        </div>
+        <div id="responseBox">
+            <p id="responseFromServer"></p>
+        </div>
+    </div>
 
-    <p>Name: </p>
-    <input type="text" id="Username" required>
-    <br>
-    <p>Security Code: </p>
-    <input type="text" id="SecurityCode" required>
-    <br>
-    <input id="submitButton" type="submit" onclick="newUser()" required>
+    <div id="WelcomeBox">
+        <h1>Welcome!<br>This is how it works:
+        </h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
 
-</div>
+    <div id="HighScores">
+        <h1>Highscores:</h1>
+        <table id="HighScoresTable">
+            <tr>
+                <th>Name</th>
+                <th>Score</th>
+                <th>Timestamp</th>
+            </tr>
+            <tr>
+                <td>Andreas</td>
+                <td>9001</td>
+                <td>11.12.2017</td>
+            </tr>
+            <tr>
+                <td>Andreas</td>
+                <td>9001</td>
+                <td>11.12.2017</td>
+            </tr>
+            <tr>
+                <td>Andreas</td>
+                <td>9001</td>
+                <td>11.12.2017</td>
+            </tr>
+        </table>
+    </div>
 
-<div id="responseBox">
-    <h2>Thank you!</h2>
-    <p id="responseFromServer"></p>
+    <div id="UserLogin">
+        <h2>Already have an<br>unique id?
+        </h2>
+        <p>Unique Id:</p>
+        <form action="javascript:void(0);" id="UserLoginForm">
+            <input type="text" id="UniqueIdField" required/>
+            <input type="submit" class="subBtn" name="Submit"/>
+        </form>
+    </div>
+
+    <div id="Links">
+        <h1>Links:</h1>
+        <p>Add Highscore:</p>
+        <input type="text" value="www.somesite.com"/>
+        <p>Show Highscores:</p>
+        <input type="text" value="www.somesite.com"/>
+    </div>
+
 </div>
 </body>
 <script src="main.js"></script>
