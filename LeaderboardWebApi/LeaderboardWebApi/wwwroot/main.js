@@ -36,6 +36,7 @@ document.getElementById("UserLoginForm").onsubmit = function() {
     var xhttp = new XMLHttpRequest();
     var uniqueId = document.getElementById("UniqueIdField").value;
     var table = document.getElementById("HighScoresTable");
+    
 
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
@@ -57,8 +58,19 @@ document.getElementById("UserLoginForm").onsubmit = function() {
             document.getElementById("AddHighscoreLink").value =
                 baseUrl + "NewHighscore?UniqueId=" + uniqueId + "&Name=SCOREHOLDERSNAME&Score=SCORETOADD";
             document.getElementById("ShowHighscoreLink").value = baseUrl + "ViewHighscores?UniqueId=" + uniqueId;
+
+            var userLogin = document.getElementById("UserLogin");
+            var links = document.getElementById("Links");
+            var highscores = document.getElementById("HighScores");
+
+            userLogin.style.backgroundColor = "#50776b";
+            links.style.backgroundColor = "#50776b";
+            highscores.style.backgroundColor = "#50776b";
+            userLogin.getElementsByTagName("H2")[0].innerHTML = "You have logged in! ";
+            
         }
     };
     xhttp.open("GET", "api/ViewHighscores?id=" + uniqueId, true);
     xhttp.send();
+    return false;
 }
